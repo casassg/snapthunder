@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: chr1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: chr1postgres
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: psqlsnapthunder
+        image: casassg/psqlsnapthunder:1.0.0
+        ports:
+        - containerPort: 5432
+# A headless service to create DNS records
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: chr1postgres
+spec:
+  ports:
+  - port: 9092
+  # chr1postgres.default.svc.cluster.local
+  clusterIP: None
+  selector:
+    app: chr1postgres

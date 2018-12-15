@@ -1,0 +1,10 @@
+.idea
+env
+*.pyc
+.vscode
+psql_dumps
+*.sqlite
+*.tsv
+*.bgz
+*.bgz.tbi
+__pycache__

@@ -1,0 +1,20 @@
+CREATE TABLE intron (
+  snaptron_id       INT NOT NULL,
+  chrom             VARCHAR(30),
+  "start" INT,
+  "end" INT,
+  "length" INT,
+  strand            char(1) NOT NULL,
+  annotated         SMALLINT  DEFAULT 0,
+  donor             char(2)     ,
+  acceptor          char(2)     ,
+  left_annotated    TEXT    DEFAULT '0',
+  right_annotated   TEXT    DEFAULT '0',
+  samples           TEXT    ,
+  samples_count     INT     DEFAULT 0,
+  coverage_sum      INT     DEFAULT 0,
+  coverage_avg      FLOAT(11)   DEFAULT 0.0,
+  coverage_median   FLOAT(11)   DEFAULT 0.0,
+  source_dataset_id INT      ,
+  PRIMARY KEY (snaptron_id)
+);

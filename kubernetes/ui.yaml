@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: snapthunderui
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+    targetPort: 5000
+    protocol: TCP
+    name: http
+  selector:
+    app: snapthunderui
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: snapthunderui
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: snapthunderui
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+      - name: snapthunderui
+        image: casassg/snapthunderui:1.0.8
+        ports:
+        - containerPort: 5000
