@@ -141,7 +141,7 @@ urllib3==1.22
 validator.py==1.2.5
 virtualenv==15.1.0
 virtualenv-clone==0.3.0
-waitress==1.1.0
+waitress==1.4.2
 watchdog==0.8.3
 wcwidth==0.1.7
 webencodings==0.5.1
