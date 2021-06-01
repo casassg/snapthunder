@@ -137,7 +137,7 @@ tweet-parser==1.13.1
 tzlocal==1.5.1
 Unidecode==1.0.22
 uritemplate==3.0.0
-urllib3==1.22
+urllib3==1.26.5
 validator.py==1.2.5
 virtualenv==15.1.0
 virtualenv-clone==0.3.0
